@@ -1,0 +1,22 @@
+{
+  "name": "nested-update",
+  "version": "1.0.0",
+  "description": "A utility for updating deeply nested objects/arrays based on key-value conditions.",
+  "main": "index.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tahatag/nested-update.git"
+  },
+  "author": "Taha Taghaddos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tahatag/nested-update/issues"
+  },
+  "homepage": "https://github.com/tahatag/nested-update#readme",
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
