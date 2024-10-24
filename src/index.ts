@@ -3,7 +3,7 @@ export type UpdateOptions = {
   createCopy?: boolean; // If true, creates a shallow copy instead of modifying the original
 };
 
-export function deepUpdate(
+export function nestedUpdate(
   data: any,
   key: string,
   value: any,
@@ -44,7 +44,7 @@ export function deepUpdate(
 
       // Recursively check/update nested items
       if (
-        deepUpdate(
+        nestedUpdate(
           data[i],
           key,
           value,
@@ -77,7 +77,7 @@ export function deepUpdate(
 
         // Recursively check/update nested objects
         if (
-          deepUpdate(
+          nestedUpdate(
             data[subKey],
             key,
             value,
