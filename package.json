@@ -1,6 +1,6 @@
 {
   "name": "nested-update",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A utility for updating deeply nested objects/arrays based on key-value conditions.",
   "main": "index.ts",
   "scripts": {
