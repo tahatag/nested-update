@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deepUpdate = deepUpdate;
-function deepUpdate(data, key, value, newData, options = {}, currentDepth = 0, visited = new WeakSet()) {
+exports.nestedUpdate = nestedUpdate;
+function nestedUpdate(data, key, value, newData, options = {}, currentDepth = 0, visited = new WeakSet()) {
     const { maxDepth = Infinity, createCopy = false } = options;
     // Exceeded max depth, stop recursion
     if (currentDepth > maxDepth) {
@@ -27,7 +27,7 @@ function deepUpdate(data, key, value, newData, options = {}, currentDepth = 0, v
                 data[i] = Array.isArray(item) ? [...item] : Object.assign({}, item);
             }
             // Recursively check/update nested items
-            if (deepUpdate(data[i], key, value, newData, options, currentDepth + 1, visited)) {
+            if (nestedUpdate(data[i], key, value, newData, options, currentDepth + 1, visited)) {
                 return true;
             }
         }
@@ -47,7 +47,7 @@ function deepUpdate(data, key, value, newData, options = {}, currentDepth = 0, v
                     data[subKey] = Array.isArray(subData) ? [...subData] : Object.assign({}, subData);
                 }
                 // Recursively check/update nested objects
-                if (deepUpdate(data[subKey], key, value, newData, options, currentDepth + 1, visited)) {
+                if (nestedUpdate(data[subKey], key, value, newData, options, currentDepth + 1, visited)) {
                     return true;
                 }
             }
